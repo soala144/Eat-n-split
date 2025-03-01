@@ -27,13 +27,16 @@ const initialFriends = [
 
 function App() {
   const [openForm, setOpenForm] = useState(false);
-  const friends = initialFriends;
+  const [friends, setFriends] = useState(initialFriends);
 
+  function handleAddFriends(friend) {
+    setFriends((friends) => [...friends, friend]);
+  }
   return (
     <div className="app">
       <div className="sidebar">
         <FriendsList friends={friends} />
-        {openForm && <FormAddFriend />}
+        {openForm && <FormAddFriend onAddFriends={handleAddFriends} />}
         <Button onClick={() => setOpenForm(!openForm)}>
           {openForm ? "Close" : "Add Friend"}
         </Button>
