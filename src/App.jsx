@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Button from "./Components/Button";
 import FormAddFriend from "./Components/FormAddFriend";
+import FormSplitBill from "./Components/FormSplitBill";
 import FriendsList from "./Components/FriendsList";
 
 const initialFriends = [
@@ -24,14 +26,20 @@ const initialFriends = [
 ];
 
 function App() {
+  const [openForm, setOpenForm] = useState(false);
   const friends = initialFriends;
+
   return (
     <div className="app">
       <div className="sidebar">
         <FriendsList friends={friends} />
-        <FormAddFriend />
-        <Button>Add Friend</Button>
+        {openForm && <FormAddFriend />}
+        <Button onClick={() => setOpenForm(!openForm)}>
+          {openForm ? "Close" : "Add Friend"}
+        </Button>
       </div>
+
+      <FormSplitBill />
     </div>
   );
 }
