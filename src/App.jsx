@@ -1,3 +1,5 @@
+import Button from "./Components/Button";
+import FormAddFriend from "./Components/FormAddFriend";
 import FriendsList from "./Components/FriendsList";
 
 const initialFriends = [
@@ -26,12 +28,9 @@ function App() {
   return (
     <div className="app">
       <div className="sidebar">
-        {/* {friends.map((friend) => (
-          <ul>
-            <li>{friend.name}</li>
-          </ul>
-        ))} */}
         <FriendsList friends={friends} />
+        <FormAddFriend />
+        <Button>Add Friend</Button>
       </div>
     </div>
   );
