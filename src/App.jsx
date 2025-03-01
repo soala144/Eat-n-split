@@ -1,4 +1,4 @@
-import FriendList from "./Components/FriendsList";
+import FriendsList from "./Components/FriendsList";
 
 const initialFriends = [
   {
@@ -26,8 +26,12 @@ function App() {
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendList friends={friends} />
-        hello
+        {/* {friends.map((friend) => (
+          <ul>
+            <li>{friend.name}</li>
+          </ul>
+        ))} */}
+        <FriendsList friends={friends} />
       </div>
     </div>
   );

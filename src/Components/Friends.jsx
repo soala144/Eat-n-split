@@ -1,4 +1,4 @@
 function Friends({ friend }) {
-  <li>{friend.name}</li>;
+  return <li>{friend.name}</li>;
 }
 export default Friends;
